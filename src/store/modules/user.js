@@ -1,7 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
-import request from '@/utils/request'
+// import request from '@/utils/request'
 
 const getDefaultState = () => {
   return {
@@ -30,10 +30,10 @@ const mutations = {
 
 const actions = {
   // user login
-   async login({ commit }, userInfo) {
+  async login({ commit }, userInfo) {
     const { username, password } = userInfo
     const result = await login({ username: username.trim(), password: password })
-    console.log(result);
+    console.log(result)
     if (result.code === 20000) {
       commit('SET_TOKEN', result.data.token)
       setToken(result.data.token)
