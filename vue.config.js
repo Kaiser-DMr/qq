@@ -24,6 +24,9 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
+ 
+
+
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
@@ -36,7 +39,13 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
+    // before: require('./mock/mock-server.js')
+    proxy: {
+      '/dev-api': {
+        target: 'http://39.98.123.211',
+        pathRewrite:{'^/dev-api':''}
+      }
+    },
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

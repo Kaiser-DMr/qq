@@ -173,14 +173,15 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg:#2d3a4b;
+$bg:#0a3f84;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
 .login-container {
   min-height: 100%;
   width: 100%;
-  background-color: $bg;
+  // background-color: $bg;
+  background-image: url('../../img/006C7PHRly1gw2df87078g30900904k8.gif');
   overflow: hidden;
 
   .login-form {
